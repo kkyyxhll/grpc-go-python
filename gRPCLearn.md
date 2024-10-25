@@ -45,3 +45,4 @@ rpc LotsOfGreetings(stream HelloRequest) returns (HelloResponse);
 或者它可以交替读取消息然后写入消息，或者读取和写入的其他组合。每个流中的消息顺序保持不变。
 例如:
 rpc BidiHello(stream HelloRequest) returns (stream HelloResponse);  
+https://blog.csdn.net/weixin_74531333/article/details/140469169
