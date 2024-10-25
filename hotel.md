@@ -17,4 +17,4 @@
 - 民宿，用户信息管理
 - 违规信息处理
 
-![Local Image](../img/first.jpg)
+![Image](img/first.jpg)
