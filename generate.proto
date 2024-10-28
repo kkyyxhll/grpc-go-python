@@ -1,29 +1,19 @@
 syntax = "proto3";
 
-option go_package = ".;proto";
+option go_package =".;proto";
 
-message Node {
-  string id = 1;
-  repeated float features = 2;
+// 定义输入消息，包含图片数据（这里假设为字节流形式）
+message ImageInput {
+    string image_input = 1;
 }
 
-message Edge {
-  string source_id = 1;
-  string target_id = 2;
+// 定义输出消息，同样包含处理后的图片数据（字节流形式）
+message ImageOutput {
+    string image_output = 1;
 }
 
-message GraphData {
-  repeated Node nodes = 1;
-  repeated Edge edges = 2;
+// 定义gRPC服务
+service ImageService {
+    rpc ProcessImage(ImageInput) returns (ImageOutput);
 }
 
-message GCNResult {
-  map<string, float> node_scores = 1;
-}
-
-service GCNService {
-  rpc ProcessGraph(GraphData) returns (GCNResult);
-}
-
-protoc --go_out=. --go_opt=paths=generate.proto
-protoc --go-grpc_out=. --go-grpc_opt=paths=generate.proto

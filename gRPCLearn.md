@@ -1,6 +1,9 @@
 # gRPC学习
 
 `https://grpc.org.cn/docs/what-is-grpc/core-concepts/`  
+`https://blog.csdn.net/weixin_74531333/article/details/140469169`
+`https://www.cnblogs.com/traditional/p/9260830.html`
+
 gRPC基于定义服务的理念，指定可以远程调用的方法以及参数和返回类型(方法名,参数列表,返回值)  
 gRPC使用Protocol Bufferrs作为接口定义语言(IDL)来描述服务接口和消息结构。  
 
@@ -45,4 +48,3 @@ rpc LotsOfGreetings(stream HelloRequest) returns (HelloResponse);
 或者它可以交替读取消息然后写入消息，或者读取和写入的其他组合。每个流中的消息顺序保持不变。
 例如:
 rpc BidiHello(stream HelloRequest) returns (stream HelloResponse);  
-https://blog.csdn.net/weixin_74531333/article/details/140469169
